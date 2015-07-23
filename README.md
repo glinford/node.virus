@@ -1,5 +1,6 @@
 # node.virus
 A Virus (Stealer) build in Node.js and Compiled with JXCore
+https://www.reddit.com/r/Malware/comments/3az0fe/poc_evade_malware_detection_though_use_of_nodejs/
 
 # Build
 On Windows :
